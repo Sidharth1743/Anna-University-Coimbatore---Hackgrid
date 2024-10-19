@@ -110,15 +110,19 @@ Library: vaderSentiment (no external API requests).
 Steps to Create a React Application
 # 1. Install Create React App
 Create React App is a command-line tool that sets up a new React project with a sensible default configuration. You can install it globally by running the following command:
+
 npm install -g create-react-app
 
 # 2. Create a New React Application
 Once you have create-react-app installed, you can create a new React application. Open your terminal and run:
+
 npx create-react-app my-app
+
 Replace my-app with the desired name for your application. This command will create a new folder named my-app and set up a new React project inside it.
 
 # 3. Navigate to Your Application Directory
 After creating your app, navigate into your project directory:
+
 cd my-app
 
 # 4. Start the Development Server
