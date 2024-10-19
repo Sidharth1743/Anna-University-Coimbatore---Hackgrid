@@ -1,0 +1,141 @@
+/* Center the registration form */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.register-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Container for each form field */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* Label styling */
+.form-group label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 0 5px;
+  color: #999;
+  font-size: 16px;
+  transition: 0.2s ease all;
+  pointer-events: none;
+}
+
+/* Input fields styling */
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Change border color on focus */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #007BFF;
+}
+
+/* Move the label up when input is focused or has a value */
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label,
+.form-group select:focus ~ label,
+.form-group select:not([value=""]):valid ~ label {
+  top: 0;
+  font-size: 12px;
+  color: #007BFF;
+  background: white;
+  padding: 0 5px;
+  transform: translateY(-50%);
+}
+
+/* Checkbox group styling */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.checkbox-item label {
+  font-size: 14px;
+  position: static;
+  transform: none;
+  background: none;
+  pointer-events: auto;
+}
+
+/* Button styling */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* Registration link styling */
+p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+p a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+p a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+}

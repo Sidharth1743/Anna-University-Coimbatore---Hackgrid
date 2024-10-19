@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG and Financial Analysis</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>ESG and Financial Analysis</h1>
+    <form id="analysis-form">
+        <label for="company-select">Select a company:</label>
+        <select id="company-select" name="company">
+            {% for company, ticker in companies %}
+            <option value="{{ company }}" data-ticker="{{ ticker }}">{{ company }} ({{ ticker }})</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Analyze</button>
+    </form>
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="esg-chart"></div>
+    <div id="financial-chart"></div>
+    <div id="results"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#analysis-form').submit(function(e) {
+                e.preventDefault();
+                var company = $('#company-select').val();
+                var ticker = $('#company-select option:selected').data('ticker');
+                
+                $('#loading').show();
+                $('#esg-chart').empty();
+                $('#financial-chart').empty();
+                $('#results').empty();
+
+                $.ajax({
+                    url: '/analyze',
+                    method: 'POST',
+                    data: {
+                        company: company,
+                        ticker: ticker
+                    },
+                    success: function(response) {
+                        $('#loading').hide();
+                        Plotly.newPlot('esg-chart', response.esg_chart.data, response.esg_chart.layout);
+                        Plotly.newPlot('financial-chart', response.financial_chart.data, response.financial_chart.layout);
+                        
+                        var resultsHtml = '<h2>ESG Score</h2>' +
+                            '<p>Total Score: ' + response.esg_score.total_score + '</p>' +
+                            '<p>Environmental Score: ' + response.esg_score.environmental_score + '</p>' +
+                            '<p>Social Score: ' + response.esg_score.social_score + '</p>' +
+                            '<p>Governance Score: ' + response.esg_score.governance_score + '</p>' +
+                            '<h2>Financial Data</h2>' +
+                            '<p>P/E Ratio: ' + response.financial_data.pe_ratio + '</p>' +
+                            '<p>P/B Ratio: ' + response.financial_data.pb_ratio + '</p>' +
+                            '<p>Beta: ' + response.financial_data.beta + '</p>' +
+                            '<p>RSI: ' + response.financial_data.rsi + '</p>';
+                        
+                        $('#results').html(resultsHtml);
+                    },
+                    error: function(xhr, status, error) {
+                        $('#loading').hide();
+                        alert('An error occurred: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

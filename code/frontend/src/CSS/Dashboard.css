@@ -1,0 +1,217 @@
+/* Styling for the entire dashboard */
+.dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Form styling */
+.form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input styling */
+.input {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+/* Dropdown styling */
+select.input {
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dropdown focus styling */
+select.input:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button styling */
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #218838;
+}
+
+/* Main container for charts */
+.charts-container {
+    margin-top: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Charts row container */
+.charts-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Chart card styling */
+.chart-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling for charts */
+.chart-image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* RSI chart specific styling to make it larger */
+.rsi-chart {
+    margin-bottom: 20px;
+}
+
+/* ESG section specific styling */
+.esg-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two ESG charts in a row */
+    gap: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Specific styling for the ESG radar chart */
+.esg-radar-chart {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific styling for the ESG comparison chart */
+.esg-comparison-chart {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ESG Score Form Styling */
+.esg-form {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the form horizontally */
+    align-items: center; /* Center the form vertically */
+    margin-top: 50px; /* Space above the form */
+}
+
+/* Label styling for ESG Score form */
+.esg-form label {
+    margin-right: 10px; /* Space between label and dropdown */
+}
+
+/* ESG Score container styling */
+.esgg {
+    background-color: #f9f9f9; /* Light background color for better contrast */
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Space inside the container */
+    margin-top: 20px; /* Space above the ESG score section */
+    width: 100%; /* Full width */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px; /* Optional: max width for large screens */
+    margin-left: auto; /* Center align the card on larger screens */
+    margin-right: auto; /* Center align the card on larger screens */
+}
+
+/* Dropdown styling for ESG Score form */
+.esg-form select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Dropdown focus styling for ESG Score form */
+.esg-form select:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Display ESG Score section styling */
+.esg-score-display {
+    margin-top: 20px; /* Space above the score display */
+    padding: 15px; /* Padding inside the score display */
+    background-color: #f8f9fa; /* Light background for contrast */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the ESG score headers */
+.esg-score-display h2 {
+    font-size: 20px; /* Font size for the header */
+    margin-bottom: 10px; /* Space below the header */
+}
+
+/* Styling for the ESG score paragraphs */
+.esg-score-display p {
+    font-size: 16px; /* Font size for the paragraphs */
+    margin: 5px 0; /* Vertical spacing between paragraphs */
+}
+
+/* Chatbot button styling */
+.chatbot-button {
+    margin-left: 10px; /* Space between the dropdown and button */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 16px; /* Font size for the button */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+/* Chatbot button hover effect */
+.chatbot-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Additional styles for the chatbot button */
+.chatbot-button-container {
+    display: flex; /* Flexbox for button alignment */
+    justify-content: flex-end; /* Align to the right */
+    margin-top: 10px; /* Space above the button */
+}
